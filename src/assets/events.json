@@ -1,0 +1,51 @@
+   
+    [
+      {
+        "start": "2020-12-15 10:00",
+        "end": "2020-12-15 10:30",
+        "title": "Event priority low",
+        "color":  {
+          "primary" : "#e3bc08",
+          "secondary" : "#FDF1BA"
+        },
+        "actions": "",
+        "resizable": {
+          "beforeStart": true,
+          "afterEnd": true
+        },
+        "id":1,
+        "draggable": true
+    },
+    {
+      "start": "2020-12-16 10:00",
+      "end": "2020-12-16 10:30",
+      "title": "Event priority medium",
+      "color":  {
+        "primary" : "#1e90ff",
+        "secondary" : "#D1E8FF"
+      },
+      "actions": "",
+      "resizable": {
+        "beforeStart": true,
+        "afterEnd": true
+      },
+      "id":2,
+      "draggable": true
+    },
+    {
+      "start": "2020-12-17 10:00",
+      "end": "2020-12-17 10:30",
+      "title": "Event priority high",
+      "color":  {
+        "primary" : "#ad2121",
+        "secondary" : "#FAE3E3"
+      },
+      "actions": "",
+      "resizable": {
+        "beforeStart": true,
+        "afterEnd": true
+      },
+      "id":3,
+      "draggable": true
+    }
+  ]

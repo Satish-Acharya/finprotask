@@ -1,0 +1,9 @@
+
+<!-- <div> {{ event | json }}</div> -->
+<div *ngIf="event" class="container-fluid">
+    <div class="content">
+        <div><label>Title:&nbsp;</label><span>{{event.title}}</span></div>
+        <div><label>Start:&nbsp; </label><span>{{ event.start | date: 'medium' }}</span></div>
+        <div><label>End:&nbsp; </label><span>{{ event.end | date: 'medium' }}</span></div>
+    </div>
+</div>
