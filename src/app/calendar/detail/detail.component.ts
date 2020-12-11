@@ -10,18 +10,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class DetailComponent implements OnInit {
   id: number;
   event:any;
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     let events = (data as any).default;
-    this.event =  events.filter(event =>{ 
-      return event.id == this.id ? true : false;
-    }).reduce((acc,event) => { 
+    this.event =  events.filter(event =>{ return event.id == this.id ? true : false;}).reduce((acc,event) => { 
         return (acc = event);
-      }, {});
+    }, {});
   }
 
 }

@@ -21,10 +21,7 @@ import {
   MOMENT
 } from 'angular-calendar';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { map } from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { colors } from './colors';
 import * as data from 'src/assets/events.json';
 import moment from 'moment';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -79,6 +76,11 @@ export class ListComponent implements OnInit {
     private router: Router,
   ) {}
 
+  /**
+   * 
+   * @param param
+   * dayClicked
+   */
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
       if (
@@ -97,10 +99,16 @@ export class ListComponent implements OnInit {
     this.view = view;
   }
 
+  /**
+   * 
+   */
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
   }
 
+  /**
+   * fetchEvents on load
+   */
   fetchEvents(): void { 
     let events = (data as any).default;
     this.events$ = events.map((event: Event) => {
@@ -120,6 +128,11 @@ export class ListComponent implements OnInit {
     this.fetchEvents();
   }
 
+  /**
+   * 
+   * @param event 
+   * eventClicked
+   */
   eventClicked(event: CalendarEvent<{ event: Event }>): void {
     this.router.navigate(['/view/'+event.meta.event['id']]);
   }
